@@ -43,13 +43,6 @@
 }
 
 /* === RESET & BASE === */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 html {
   scroll-behavior: smooth;
   color-scheme: dark;

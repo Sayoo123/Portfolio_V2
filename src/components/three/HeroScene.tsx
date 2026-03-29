@@ -108,11 +108,10 @@ export default function HeroScene() {
     let targetY = 0;
 
     const onMouseMove = (e: MouseEvent) => {
-      const rect = mount.getBoundingClientRect();
-      mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      mouseY = -((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
     };
-    mount.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // === ANIMATION ===
     let frameId: number;
@@ -127,8 +126,8 @@ export default function HeroScene() {
       targetY += (mouseY - targetY) * 0.05;
 
       // Main object rotation
-      torusKnot.rotation.x = t * 0.18 + targetY * 0.4;
-      torusKnot.rotation.y = t * 0.22 + targetX * 0.4;
+      torusKnot.rotation.x = t * 0.18 + targetY * 0.6;
+      torusKnot.rotation.y = t * 0.22 + targetX * 0.6;
       torusKnot.rotation.z = t * 0.08;
 
       wireframe.rotation.x = torusKnot.rotation.x;
@@ -170,7 +169,7 @@ export default function HeroScene() {
 
     return () => {
       cancelAnimationFrame(frameId);
-      mount.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
       mount.removeChild(renderer.domElement);
       renderer.dispose();

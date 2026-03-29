@@ -28,7 +28,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center overflow-hidden"
       style={{ background: "var(--color-bg)" }}
     >
       {/* Background grid */}
@@ -49,9 +49,9 @@ export function HeroSection() {
       />
 
       <div className="container-custom relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-screen py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-8 items-center py-10 md:py-16">
           {/* Left: Copy */}
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-8 md:gap-10">
             {/* Status badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export function HeroSection() {
                 </span>
               </div>
             </motion.div>
- 
+
             {/* Headline */}
             <div>
               <motion.div
@@ -77,24 +77,24 @@ export function HeroSection() {
                 <MapPin size={14} className="text-[var(--color-text-subtle)]" />
                 <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-text-subtle)]">{personal.location}</span>
               </motion.div>
- 
+
               <AnimatedText
-                className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.25] tracking-tight text-[var(--color-text)]"
+                className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] tracking-tight text-[var(--color-text)]"
                 text={`Backend Engineer Building Scalable Systems & AI Tools`}
                 as="h1"
               />
             </div>
- 
+
             {/* Sub */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg md:text-xl text-[var(--color-text-muted)] max-w-xl leading-relaxed font-medium"
+              className="text-base md:text-lg text-[var(--color-text-muted)] max-w-xl leading-relaxed font-medium"
             >
               {personal.subHeadline}
             </motion.p>
- 
+
             {/* Stack pills */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -114,7 +114,7 @@ export function HeroSection() {
                 </motion.span>
               ))}
             </motion.div>
- 
+
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -129,7 +129,7 @@ export function HeroSection() {
                 Hire Me
               </Button>
             </motion.div>
- 
+
             {/* GitHub link */}
             <motion.a
               initial={{ opacity: 0 }}
@@ -150,7 +150,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative h-[400px] lg:h-[600px] flex items-center justify-center"
+            className="relative h-[300px] lg:h-[450px] flex items-center justify-center"
           >
             {/* Glow behind scene */}
             <div
@@ -169,7 +169,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-xs text-[var(--color-text-subtle)]">scroll</span>
         <motion.div
