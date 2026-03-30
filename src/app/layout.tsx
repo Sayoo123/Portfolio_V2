@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, Inter } from "next/font/google";
 import "./globals.css";
+import { AssistantWidget } from "@/components/ai/AssistantWidget";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -63,6 +64,7 @@ export default function RootLayout({
     <html lang="en" className={`${syne.variable} ${inter.variable}`}>
       <body suppressHydrationWarning={true}>
         {children}
+        <AssistantWidget />
       </body>
     </html>
   );
